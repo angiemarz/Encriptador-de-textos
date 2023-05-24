@@ -24,3 +24,4 @@ Mimesrai : Mira
 
 Ir a mi página c:
 https://angiemarz.github.io/Encriptador-de-textos/
+![imagen](https://github.com/angiemarz/Encriptador-de-textos/assets/77129774/e1e169db-95ea-4513-908a-596d96847fc9)
