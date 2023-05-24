@@ -1,0 +1,250 @@
+html {
+    font-size: 62.5%;
+    color:  #0A3871;
+    
+}
+
+body {
+    background: #F3F5FC;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.header{
+    padding: 40px 0 0 84px;
+}
+main {
+    display: flex;
+    height: auto;
+    padding: 2rem;
+    flex-direction: column;
+}
+
+.contenedor-izq {
+    width: 100%;
+    height: 30rem;
+    background: #F3F5FC;
+    border: 1px solid #F3F5FC;
+    border-radius: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    color:  #0A3871;
+    font-size: 40%;
+}
+
+.input-texto {
+    width: 75%;
+    height: 70%;
+    font-size: 1.6rem;
+    
+    font-family: 'Montserrat', sans-serif;
+    border-style: none;
+    resize: none;
+    outline: none;
+    margin-bottom: 1.5rem;
+    background: #F3F5FC;
+    
+    scrollbar-width: thin;
+}
+
+.input-texto::-webkit-scrollbar {
+    width: 8px;
+}
+
+.input-texto::-webkit-scrollbar-track {
+    background-color: #e0e0e0;
+}
+
+.input-texto::-webkit-scrollbar-thumb {
+    background-color: #DDDAC6;
+}
+
+.contenedor-izq p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    color: #A6A6A6;
+}
+
+.container-btns {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    margin-top: 2rem;
+}
+
+.b-encriptar {
+    width: 100%;
+    height: 67px;
+    padding: 24px;
+    border-radius: 24px;
+    background:  #0A3871;
+    border: 1px solid  #0A3871;
+    color: #FFFFFF;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    letter-spacing: .3rem;
+    cursor: pointer;
+    margin-bottom: 1rem;
+}
+
+.b-encriptar:hover {
+    transform: scale(1.05);
+    box-shadow: 1px 1px 10px #A6A6A6;
+    transition: 1s transform;
+}
+
+.b-encriptar:active {
+    background: #9abaa5;
+}
+
+.b-desencriptar {
+    width: 100%;
+    height: 67px;
+    padding: 24px;
+    border-radius: 24px;
+    background: #D8DFE8;
+    border: 1px solid #0A3871;
+    color: #0A3871;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    letter-spacing: .3rem;
+    cursor: pointer;
+    margin-bottom: 1rem;
+}
+
+.b-desencriptar:hover {
+    transform: scale(1.05);
+    box-shadow: 1px 1px 10px #A6A6A6;
+    transition: 1s transform;
+}
+
+.b-desencriptar:active {
+    background: pink;
+}
+
+.b-copiar {
+    width: 100%;
+    height: 67px;
+    padding: 24px;
+    border-radius: 24px;
+    background: #D8DFE8;
+    border: 1px solid #0A3871;
+    color: #0A3871;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    letter-spacing: .3rem;
+    cursor: pointer;
+}
+
+.b-copiar:hover {
+    transform: scale(1.05);
+    box-shadow: 1px 1px 10px white;
+    transition: 1s transform;
+}
+
+.b-copiar:active {
+    background:pink;
+}
+
+.contenedor-der {
+    width: 100%;
+    height: 20rem;
+    background-color: pink;
+    margin-top: 2rem;
+    border-radius: 36px;
+    border: 1px solid pink;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedor-texto {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1rem;
+}
+
+.output-texto {
+    display: none;
+    width: 80%;
+    border-style: none;
+    resize: none;
+    outline: none;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    background: none;
+    color: black;    
+    scrollbar-color: pink pink;
+    scrollbar-width: thin;
+}
+
+.output-texto::-webkit-scrollbar {
+    width: 8px;
+}
+
+.output-texto::-webkit-scrollbar-track {
+    background-color: pink;
+}
+
+.output-texto::-webkit-scrollbar-thumb {
+    background-color: pink;
+}
+
+.texto1-contder {
+    font-family: 'PT Sans', sans-serif;
+    color: black;
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.texto2-contder {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.3rem;
+    color: black;
+    text-align: center;
+}
+
+footer {
+    position: fixed;
+    text-align: center;
+    background-color: #1B376F;
+    color: #F3F5FC;
+    bottom: 0%;
+    width: 100%;
+    font-size:20px;
+}
+
+
+
+
+
+footer span:nth-child(3) {
+    color: black;
+    
+}
+
+footer span:nth-child(4) {
+    color: black;
+    margin: 0 .4rem 0 .4rem;
+} 
+
+.icon_linkedin {
+    width: 2rem;
+    height: 2rem;
+    margin-right: .4rem;
+}
+
+.icon_github {
+    width: 2rem;
+    height: 2rem;
+}

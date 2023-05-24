@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Encriptador de Texto">
+    <meta name="robots" content="index,follow">
+
+    <!-- Hojas de estilo -->
+    <link rel="stylesheet" href="./stylesheet/reset.css">
+   
+    <link rel="stylesheet" href="./stylesheet/style.css">
+    <link rel="stylesheet" href="./stylesheet/tablet.css" media="screen and (min-width: 760px)">
+    <link rel="stylesheet" href="./stylesheet/desktop.css" media="screen and (min-width: 1024px)">
+
+    
+
+    <!-- Fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+
+    <!-- Librería de alertar -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <title>Encriptador de Texto</title>
+</head>
+
+<body>
+    <header class="logoc">
+        <img src="image/logo.jpeg" alt="logo" id="logo">
+    </header>
+    <div class="container--loader">
+        <div class="loader"></div>
+    </div>
+    
+    <main>
+        <div class="contenedor-izq">
+            <textarea name="" id="input-texto" class="input-texto" cols="30" rows="13" placeholder="Ingrese el texto aquí"></textarea>
+            <p>Solo letras minúsculas y sin acentos</p>
+        </div>
+        
+        <div class="container-btns">
+            <button class="b-encriptar" id="b-encriptar" onclick="encriptar()">ENCRIPTAR</button>
+            <button class="b-desencriptar" onclick="desencriptar()">DESENCRIPTAR</button>
+            <button class="b-copiar" onclick="copiar()">COPIAR</button>
+        </div>
+        
+        <div class="contenedor-der">
+            <div class="opacidad-imagen"></div> 
+
+            <div class="contenedor-texto">
+                <textarea name="" id="output-texto" class="output-texto" cols="30" rows="10"></textarea>
+                <P id="texto1-contder" class="texto1-contder">No se encontró ningún mensaje</P>
+                <p id="texto2-contder" class="texto2-contder">Ingresa el texto que desees encriptar o desencriptar</p>               
+            </div>              
+        </div>
+    </main>
+
+    <footer>
+        <span>&copy; Angela Michelle Martinez Ibarra °° ORACLE ONE °° EQUIPO 5</span>
+       
+        <a href="https://github.com/angiemarz" target="_blank"><img class="icon_github" src="./image/icon-github.png" alt="GitHub"></a>
+    </footer>
+
+    <script>
+        /* ===== Loader =====*/
+window.addEventListener('load', () => {
+    const contenedorLoader = document.querySelector('.container--loader');
+    contenedorLoader.style.opacity = 0;
+    contenedorLoader.style.visibility = 'hidden';
+})
+
+function focus() {
+    let input = document.getElementById("input-texto");
+    input.focus();
+}
+
+function value() {
+    let input = document.getElementById("input-texto");
+    input.value = "";
+}
+
+function encriptar() {
+    let texto = document.getElementById("input-texto").value;
+    let txt_cifrado = texto.replace(/e/gm, "enter");
+    txt_cifrado = txt_cifrado.replace(/o/gm, "ober");
+    txt_cifrado = txt_cifrado.replace(/i/gm, "imes");
+    txt_cifrado = txt_cifrado.replace(/a/gm, "ai");
+    txt_cifrado = txt_cifrado.replace(/u/gm, "ufat");
+
+    if (/[^a-zñ ]/.test(texto)) {
+        Swal.fire({
+            icon: 'error',
+            iconColor: '#b9ab9c',
+            background: '#E3E0DE',
+            title: 'Oops...',
+            confirmButtonColor: '#b9ab9c',
+            text: 'Solo se permiten letras minusculas y sin acento',
+          });
+    }
+    else if (texto.length === 0) {
+        Swal.fire({
+            icon: 'error',
+            iconColor: '#b9ab9c',
+            background: '#E3E0DE',
+            title: 'Oops...',
+            confirmButtonColor: '#b9ab9c',
+            text: 'El campo de texto está vacio, escriba el texto que desea encriptar',
+          });
+    }
+    else {
+        document.getElementById("texto1-contder").style.display = "none";
+        document.getElementById("texto2-contder").style.display = "none";
+        document.getElementById("output-texto").style.display = "inline-block";
+        document.getElementById("output-texto").innerHTML = txt_cifrado;
+        
+        value();
+    }
+}
+
+function desencriptar() {
+    let texto = document.getElementById("input-texto").value;
+    let txt_cifrado = texto.replace(/enter/gm, "e");
+    txt_cifrado = txt_cifrado.replace(/ober/gm, "o");
+    txt_cifrado = txt_cifrado.replace(/imes/gm, "i");
+    txt_cifrado = txt_cifrado.replace(/ai/gm, "a");
+    txt_cifrado = txt_cifrado.replace(/ufat/gm, "u");
+
+    if (texto.length === 0) {
+        Swal.fire({
+            icon: 'error',
+            iconColor: '#b9ab9c',
+            background: '#E3E0DE',
+            title: 'Oops...',
+            confirmButtonColor: '#b9ab9c',
+            text: 'El campo de texto está vacio, escriba el texto que desea desencriptar',
+        });
+    }
+
+    else {
+    document.getElementById("texto1-contder").style.display = "none";
+    document.getElementById("texto2-contder").style.display = "none";
+    document.getElementById("output-texto").style.display = "inline-block";
+    document.getElementById("output-texto").innerHTML = txt_cifrado;
+
+    value();    
+    }
+}
+
+function copiar() {
+    let contenido = document.querySelector("#output-texto");
+    contenido.select();
+    document.execCommand("copy");
+    Swal.fire({
+        icon: 'success',
+        iconColor: '#b9ab9c',
+        background: '#E3E0DE',
+        title: '¡Bien!',
+        confirmButtonColor: '#b9ab9c',
+        text: 'Texto copiado correctamente',
+    });
+}
+
+focus();
+value();
+    </script>
+</body>
+</html>
